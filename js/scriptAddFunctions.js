@@ -28,8 +28,8 @@ function rememberMyFilms() {
     let a = prompt(
       "Enter the title of one of the last movies you watched?",
       ""
-    );
-    let b = +prompt("How do you rate the film?", "");
+    ).trim();
+    let b = +prompt("How do you rate the film?", "").trim();
     if (a != null && b != null && a != "" && b != "" && a.length < 50) {
       personalMovieDB.movies[a] = b;
     } else {
@@ -42,7 +42,7 @@ rememberMyFilms();
 
 function writeYoutGenres() {
   for (let i = 1; i <= 3; i++) {
-    let genre = prompt(`Your favourite genre #${i}`, "");
+    let genre = prompt(`Your favourite genre #${i}`, "").trim();
     if (genre != null && genre != "") {
       personalMovieDB.genres[i - 1] = genre;
     } else {
